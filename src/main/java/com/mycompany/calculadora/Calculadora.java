@@ -16,7 +16,7 @@ public class Calculadora {
     public static void main(String[] args) {
         
             Scanner input = new Scanner(System.in);
-            
+            Operacoes opc = new Operacoes();
             
             System.out.println(" Informe Qual Tipo de Operação, sendo: +, - , *, /");
             String operacao = input.nextLine();
@@ -30,12 +30,12 @@ public class Calculadora {
             
             
             switch (menu) {
-                case '+' : System.out.println(valor1+" + "+valor2+" = "+(valor1+valor2));break;
-                case '-' : System.out.println(valor1+" - "+valor2+" = "+(valor1-valor2));break;
-                case '*' : System.out.println(valor1+" * "+valor2+" = "+(valor1*valor2));break;
+                case '+' : System.out.println(valor1+" + "+valor2+" = "+(opc.Soma(valor1,valor2)));break;
+                case '-' : System.out.println(valor1+" - "+valor2+" = "+(opc.Subtracao(valor1, valor2)));break;
+                case '*' : System.out.println(valor1+" * "+valor2+" = "+(opc.Multiplicacao(valor1, valor2)));break;
                 case '/' : {
                     if(valor2 !=0){
-                        System.out.println(valor1+" / "+valor2+" = "+(valor1/valor2));
+                        System.out.println(valor1+" / "+valor2+" = "+(opc.Divisao(valor1, valor2)));
                        
                     }else{
                         System.out.println("O Segundo valor 2 deve ser maior que 0");
